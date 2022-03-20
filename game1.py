@@ -1,2 +1,4 @@
-print('witaj w nowej grze pietrze napisanej w\n Pythonie')
-import pygame
+import pygame, sys
+from pygame.locals import *
+
+pygame.init()

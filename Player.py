@@ -1,9 +1,12 @@
 import pygame
+from pygame import K_s
+from pygame import K_a
+from pygame import KSCAN_0
 from pygame.locals import (
-    K_UP,
-    K_DOWN,
-    K_LEFT,
-    K_RIGHT,
+    K_w,
+    K_s,
+    K_a,
+    K_d    
 )
 
 class Player(pygame.sprite.Sprite):
@@ -14,13 +17,13 @@ class Player(pygame.sprite.Sprite):
        self.rect = self.surf.get_rect()
     
     def updateKey(self, presKey, screensize):
-        if presKey[K_UP]:
+        if presKey[K_w]:
             self.rect.move_ip(0,-5)
-        if presKey[K_DOWN]:
+        if presKey[K_s]:
             self.rect.move_ip(0,5)
-        if presKey[K_LEFT]:
+        if presKey[K_s]:
             self.rect.move_ip(-5,0)
-        if presKey[K_RIGHT]:
+        if presKey[K_d]:
             self.rect.move_ip(5,0)
         #keep player in screen
         if self.rect.left < 0:
